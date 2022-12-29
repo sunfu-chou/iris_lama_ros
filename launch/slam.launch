@@ -7,8 +7,8 @@
   <arg name="initial_pos_x"         default="0.0"/>
   <arg name="initial_pos_y"         default="0.0"/>
   <arg name="initial_pos_a"         default="0.0"/>
-  <arg name="d_thresh"              default="0.005"/>
-  <arg name="a_thresh"              default="0.05"/>
+  <arg name="d_thresh"              default="0.0005"/>
+  <arg name="a_thresh"              default="0.0005"/>
   <arg name="l2_max"                default="0.5"/>
   <arg name="resolution"            default="0.05"/>
   <arg name="patch_size"            default="32"/>
@@ -21,7 +21,7 @@
   <arg name="beam_step"             default="1"/>
   <arg name="truncate"              default="0.0"/>
   <arg name="truncate_range"        default="0.0"/>
-  <arg name="map_publish_period"    default="5.0"/>
+  <arg name="map_publish_period"    default="1.0"/>
   <arg name="transient_map"         default="false"/>
   <arg name="create_summary"        default="false"/>
 
