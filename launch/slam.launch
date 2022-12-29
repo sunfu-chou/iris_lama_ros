@@ -1,0 +1,55 @@
+<launch>
+  <arg name="global_frame_id"       defalut="map"/>
+  <arg name="odom_frame_id"         defalut="odom"/>
+  <arg name="base_frame_id"         defalut="base_link"/>
+  <arg name="scan_topic"            defalut="/scan"/>
+  <arg name="transform_tolerance"   defalut="0.1"/>
+  <arg name="initial_pos_x"         defalut="0.0"/>
+  <arg name="initial_pos_y"         defalut="0.0"/>
+  <arg name="initial_pos_a"         defalut="0.0"/>
+  <arg name="d_thresh"              defalut="0.005"/>
+  <arg name="a_thresh"              defalut="0.05"/>
+  <arg name="l2_max"                defalut="0.5"/>
+  <arg name="resolution"            defalut="0.05"/>
+  <arg name="patch_size"            defalut="32"/>
+  <arg name="strategy"              defalut="gn"/>
+  <arg name="max_iterations"        defalut="100"/>
+  <arg name="use_compression"       defalut="false"/>
+  <arg name="compression_algorithm" defalut="lz4"/>
+  <arg name="cache_size"            defalut="100"/>
+  <arg name="mrange"                defalut="10.0"/>
+  <arg name="beam_step"             defalut="1"/>
+  <arg name="truncate"              defalut="0.0"/>
+  <arg name="truncate_range"        defalut="0.0"/>
+  <arg name="map_publish_period"    defalut="5.0"/>
+  <arg name="transient_map"         defalut="false"/>
+  <arg name="create_summary"        defalut="false"/>
+
+  <node pkg="iris_lama_ros" name="slam2d_ros" type="slam2d_ros" output="screen">
+      <param name="global_frame_id"       value="$(arg global_frame_id)"/>
+      <param name="odom_frame_id"         value="$(arg odom_frame_id)"/>
+      <param name="base_frame_id"         value="$(arg base_frame_id)"/>
+      <param name="scan_topic"            value="$(arg scan_topic)"/>
+      <param name="transform_tolerance"   value="$(arg transform_tolerance)"/>
+      <param name="initial_pos_x"         value="$(arg initial_pos_x)"/>
+      <param name="initial_pos_y"         value="$(arg initial_pos_y)"/>
+      <param name="initial_pos_a"         value="$(arg initial_pos_a)"/>
+      <param name="d_thresh"              value="$(arg d_thresh)"/>
+      <param name="a_thresh"              value="$(arg a_thresh)"/>
+      <param name="l2_max"                value="$(arg l2_max)"/>
+      <param name="resolution"            value="$(arg resolution)"/>
+      <param name="patch_size"            value="$(arg patch_size)"/>
+      <param name="strategy"              value="$(arg strategy)"/>
+      <param name="max_iterations"        value="$(arg max_iterations)"/>
+      <param name="use_compression"       value="$(arg use_compression)"/>
+      <param name="compression_algorithm" value="$(arg compression_algorithm)"/>
+      <param name="cache_size"            value="$(arg cache_size)"/>
+      <param name="mrange"                value="$(arg mrange)"/>
+      <param name="beam_step"             value="$(arg beam_step)"/>
+      <param name="truncate"              value="$(arg truncate)"/>
+      <param name="truncate_range"        value="$(arg truncate_range)"/>
+      <param name="map_publish_period"    value="$(arg map_publish_period)"/>
+      <param name="transient_map"         value="$(arg transient_map)"/>
+      <param name="create_summary"        value="$(arg create_summary)"/>
+  </node>
+</launch>
